@@ -1,0 +1,519 @@
+/* font-family: 'Roboto', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background: #eeeeee;
+}
+
+.swal2-html-container {
+    overflow: hidden !important;
+}
+
+.swal2-styled {
+    background: #ffff00 !important;
+    color: #000 !important;
+}
+
+.swal2-popup {
+    background: #141414 !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.swal2-input {
+    outline: crimson !important;
+}
+
+/* menu */
+
+header {
+    width: 1400px;
+    margin: 0 auto;
+    height: 100px;
+    text-align: center;
+    background: #141414;
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+header a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+header a b {
+    color: #ffff00;
+}
+
+header .links a:hover {
+    color: #ffff00;
+}
+
+header .link-pagina {
+    font-size: 3rem;
+    margin-left: 25px;
+    padding-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+header .links {
+    font-size: 2rem;
+    margin: 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header .links li a {
+    margin: 0 20px;
+}
+
+@media screen and (max-width: 1400px) {
+    header {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    header {
+        height: auto;
+        justify-content: end;
+    }
+
+    header .links {
+        display: none;
+    }
+
+    header .link-pagina {
+        margin-right: 20px;
+        font-size: 3rem;
+        padding-bottom: 5px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {}
+
+#menuToggle {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+
+    z-index: 3;
+
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: #232323;
+
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: #000000;
+}
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 5px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #ffffff;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+#menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+    position: absolute;
+    width: 350px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 3rem;
+}
+
+#menuToggle input:checked~ul {
+    transform: none;
+}
+
+@media screen and (min-width: 1050px) {
+    #menuToggle {
+        display: none;
+    }
+}
+
+/* swiper */
+
+.carusel {
+    margin: 0 auto;
+    width: 1400px;
+}
+
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: yellow !important;
+}
+
+@media screen and (max-width: 1400px) {
+    .carusel {
+        width: 100%;
+    }
+
+}
+
+/* cuerpo */
+
+main {
+    text-align: center;
+}
+
+/* descripcion */
+
+.descripcion {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 35px 30px 35px;
+}
+
+/* galeria */
+
+.linea-amarilla {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 900px;
+    height: 8px;
+    background: #ffff00;
+}
+
+.galeria {
+    margin: auto;
+    width: 900px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    grid-template-areas:
+        "item1 item1 item2 item3"
+        "item1 item1 item4 item4"
+        "item5 item6 item4 item4";
+}
+
+.galeria-info {
+    margin: 0 auto;
+    width: 900px;
+    margin-top: 20px;
+    padding: 0 10px;
+    text-align: justify;
+}
+
+.galeria-info h3 {
+    text-align: center;
+}
+
+.galeria .corte {
+    overflow: hidden;
+}
+
+.contenio-galeria-a {
+    grid-area: item1;
+}
+
+.contenio-galeria-b {
+    grid-area: item2;
+}
+
+.contenio-galeria-c {
+    grid-area: item3;
+}
+
+.contenio-galeria-d {
+    grid-area: item4;
+}
+
+.contenio-galeria-e {
+    grid-area: item5;
+}
+
+.contenio-galeria-f {
+    grid-area: item6;
+}
+
+.galeria img {
+    width: 100%;
+    height: 105%;
+}
+
+@media screen and (max-width: 1300px) {
+    .galeria {
+        width: 95%;
+    }
+
+    .linea-amarilla {
+        width: 95%;
+    }
+
+    .galeria-info {
+        width: 90%;
+    }
+
+
+}
+
+@media screen and (max-width: 576px) {
+    .galeria {
+        width: 90%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "item1 item2 item2"
+            "item3 item2 item2"
+            "item4 item4 item5"
+            "item4 item4 item6";
+    }
+
+}
+
+/* tarjetas */
+
+.tarjeta {
+    width: 900px;
+    margin: 40px auto;
+    padding: 15px 25px;
+    border-radius: 10px;
+    /* background: rgb(225, 225, 225); */
+}
+
+.tarjeta h2 {
+    margin-bottom: 20px;
+    border-bottom: 8px solid yellow;
+}
+
+.cotenedor-tarjeta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contenido-tarjeta picture img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 1300px) {
+    .tarjeta {
+        width: 100%;
+    }
+
+    .cotenedor-tarjeta {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .descripcion {
+        padding: 10px;
+    }
+
+    .tarjeta {
+        margin: 10px auto;
+    }
+
+    .cotenedor-tarjeta {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {}
+
+.contacto {
+    margin-bottom: 40px;
+}
+
+.formulario {
+    margin: 0 auto;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-areas input {
+    text-align: center;
+    width: 450px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid hsla(0, 0%, 8%, 0.6);
+    border-radius: 8px;
+}
+
+.formulario-areas textarea {
+    width: 450px;
+    padding: 5px;
+    margin: 5px 0;
+    border: 2px solid hsla(0, 0%, 8%, 0.6);
+    border-radius: 8px;
+}
+
+.formulario button {
+    color: white;
+    margin: 0 auto;
+    width: 70px;
+    padding: 5px;
+    background: #141414;
+    border-radius: 8px;
+}
+
+.archivos {
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .formulario {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .formulario-areas input {
+        width: 80%;
+    }
+
+    .formulario-areas textarea {
+        width: 80%;
+    }
+}
+
+/* footer */
+
+footer {
+    background: rgb(20, 20, 20);
+    color: rgb(110, 110, 110);
+    text-align: center;
+}
+
+.pie {
+    width: 768px;
+    margin: 0 auto;
+    padding: 35px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pie h3 {
+    margin-bottom: 10px;
+    color: rgb(225, 225, 225);
+}
+
+.contenido-pie-a ul {
+    list-style: none;
+}
+
+.contenido-pie-b i {
+    font-size: 30px;
+    margin: 10px 5px 0px 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .pie {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 50px;
+    }
+
+    .contenido-pie-c {
+        padding: 0 25px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .pie {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 25px;
+    }
+
+
+}
